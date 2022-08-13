@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Card,
   Heading,
@@ -23,31 +23,17 @@ function Rating() {
         appreciated to help us improve our offering!
       </Paragraph>
       <RatingDiv>
-        {arr.map((e) => (
-          <Span key={e} onClick={() => setRating(e)}>
-            {e}
+        {arr.map((ele) => (
+          <Span
+            key={ele}
+            className={`rate${ele}`}
+            onClick={() => setRating(ele)}
+          >
+            {ele}
           </Span>
         ))}
-        {/* <Span>1</Span>
-        <Span>2</Span>
-        <Span>3</Span>
-        <Span>4</Span>
-        <Span>5</Span> */}
       </RatingDiv>
-      <Linke
-        to={{
-          pathname: `thankyou/${rating}`,
-        }}
-        state={{
-          index: { rrate: rating },
-        }}
-      >
-        {/* <Linke
-        to={{
-          pathname: "/thankyou",
-          state: { rating: rating },
-        }}
-      > */}
+      <Linke to={{ pathname: `thankyou` }} state={{ rating: rating }}>
         <span>SUBMIT</span>
       </Linke>
     </Card>

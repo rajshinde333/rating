@@ -4,7 +4,22 @@ import styled from "styled-components";
 export const Card = styled.div`
   background-color: #1e252f;
   width: 28%;
+  border-radius: 30px;
   padding: 30px;
+  @media (max-width: 480px) {
+    width: 70%;
+    font-size: 15px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 45%;
+    font-size: 15px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 35%;
+    font-size: 15px;
+  }
 `;
 
 export const StarImg = styled.img`
@@ -13,6 +28,13 @@ export const StarImg = styled.img`
   width: 1.4em;
   padding: 15px;
   border-radius: 50%;
+  margin-bottom: 10px;
+`;
+
+export const ThankImg = styled.img`
+  height: 7em;
+  width: 10.5em;
+  padding: 15px;
   margin-bottom: 10px;
 `;
 
@@ -32,35 +54,60 @@ export const Paragraph = styled.p`
 export const RatingDiv = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-flow: wrap;
 `;
 
-export const Span = styled.span`
+export const Span = styled.button`
   background-color: #262f38;
-  padding: 17px 22px;
+  // padding: 17px 22px;
+  padding: 1.1em 1.5em;
   border-radius: 50%;
+  border: none;
   color: hsl(217, 12%, 63%);
   cursor: pointer;
-`;
 
-export const ButtonStyle = {
-  textDecoration: "none",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  padding: ".7em 0",
-  width: "100%",
-  backgroundColor: "hsl(25, 97%, 53%)",
-  color: "#fff",
-  fontSize: "1.1em",
-  letterSpacing: "2px",
-  marginTop: "25px",
-  borderRadius: "25px",
-  fontWeight: "500",
-  "&:hover": {
-    backgroundColor: "#fff",
-    color: "hsl(25, 97%, 53%)",
-  },
-};
+  @media (max-width: 480px) {
+    padding: 0.8em 1.2em;
+  }
+
+  &:nth-child(1) {
+    &:hover,
+    &:focus {
+      color: #000;
+      background-color: hsl(217, 12%, 63%);
+    }
+  }
+
+  &:nth-child(2) {
+    &:hover,
+    &:focus {
+      color: #000;
+      background-color: hsl(218, 19%, 75%);
+    }
+  }
+
+  &:nth-child(3) {
+    &:hover,
+    &:focus {
+      color: #000;
+      background-color: hsl(214, 21%, 87%);
+    }
+  }
+
+  &:nth-child(4) {
+    &:hover,
+    &:focus {
+      color: #000;
+      background-color: #fff;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: hsl(25, 97%, 53%);
+  }
+`;
 
 export const Linke = styled(Link)`
   text-decoration: none;
@@ -77,5 +124,23 @@ export const Linke = styled(Link)`
   &:hover {
     color: hsl(25, 97%, 53%);
     background-color: #fff;
+  }
+`;
+
+export const RatingTitleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: -10px;
+`;
+
+export const RatingTitle = styled.p`
+  color: hsl(25, 97%, 53%);
+  background-color: #262f38;
+  font-size: 0.9em;
+  width: 50%;
+  padding: 5px;
+  border-radius: 30px;
+  @media (max-width: 480px) {
+    width: 70%;
   }
 `;
